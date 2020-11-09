@@ -23,3 +23,13 @@ h1 {
     margin-left: 10px;
     margin-top: 20px;
 }
+#searchButton {
+    color: #F2F1EF;
+    background: #006884;
+    border-color: #F2F1EF;
+}
+#current-location-button {
+    color: #006884;
+    background:#F2F1EF;
+    border-color:#006884;
+}
