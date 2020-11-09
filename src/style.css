@@ -1,12 +1,25 @@
 body{
     padding: 20px;
-    background: #F2F1EF;
+    background: #97BCC7;
     font-family: 'Poppins', sans-serif;
 }
 .weatherApp {
-    border: 2px solid #97BCC7;
+    border: 2px solid#F2F1EF;
     padding: 15px;
     margin: 20px auto;
     max-width: 600px;
     border-radius: 5px;
+}
+.search-form {
+    margin-bottom: 10px;
+}
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #F2F1EF;
+    font-size: 50px;
+    font-weight: bold;
+    max-height: 1;
+    padding: 0px;
+    margin-left: 10px;
+    margin-top: 20px;
 }
