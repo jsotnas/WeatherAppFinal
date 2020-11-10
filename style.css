@@ -11,6 +11,7 @@ body {
         max-width: 600px;
         border-radius: 5px;
 }
+
 .search-form {
         margin-bottom: 10px;
 }
@@ -43,6 +44,7 @@ li {
         margin-left: 10px;
         color: #006884;
 }
+
 li::first-letter {
         text-transform: capitalize;
 }
