@@ -16,6 +16,11 @@ body {
         margin-bottom: 10px;
 }
 
+.weatherIcon {
+    padding: 0;
+    margin: 0 auto;
+  }
+
 h1 {
         font-family: 'Poppins', sans-serif;
         color: #006884;
@@ -36,11 +41,13 @@ h1 {
   h3 {
     font-size: 15px;
     text-align: center;
+    color: #006884;
   }
   
   .weather-forecast-temperature {
     text-align: center;
     font-size: 14px;
+    color: #006884;
   }
 
 .openSourceLink {
