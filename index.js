@@ -23,7 +23,9 @@ function formatDate(date) {
   
     return `${day} ${hours}:${minutes}`;
   }
-  function displayWeatherCondition(response) {
+
+
+function displayWeatherCondition(response) {
     document.querySelector("#city-name").innerHTML = response.data.name;
     document.querySelector("#temperature").innerHTML = Math.round(
       response.data.main.temp
@@ -34,7 +36,9 @@ function formatDate(date) {
     document.querySelector("#wind").innerHTML = Math.round(
       response.data.wind.speed
     );
-    }
+    document.querySelector("#description").innerHTML = response.data.weather[0].description;
+    document.querySelector("#icon").setAttribute("src",) = `http://openweathermap.org/img/wn/10d@2x.png`;
+    
   function searchCity(city) {
     let apiKey = "cb0fb818829df1de555a746da1b22240";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
