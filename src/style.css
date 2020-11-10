@@ -24,3 +24,24 @@ h1 {
     margin-left: 10px;
     margin-top: 20px;
 }
+
+.openSourceLink {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: small;
+}
+ul {
+    padding: 0px;
+}
+
+li {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+    list-style-type: none;
+    margin-left: 10px;
+    color: #006884;
+}
+li::first-letter {
+    text-transform: capitalize;
+}
