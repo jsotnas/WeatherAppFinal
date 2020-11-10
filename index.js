@@ -71,7 +71,7 @@ iconElement.setAttribute("alt", response.data.weather[0].description);
     let forecast = null;
     for (let index = 0; index < 6; index++) {
       forecast = response.data.list[index];
-      forecastElement.innerHTML += `
+      forecastElement.innerHTML +=`
       <div class="col-2">
         <h3>
           ${formatHours(forecast.dt * 1000)}
@@ -94,9 +94,9 @@ iconElement.setAttribute("alt", response.data.weather[0].description);
   
   function showFahrenheit(event) {
     event.preventDefault();
-    let fahrentheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+    let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
     let temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = Math.round(fahrentheitTemperature);
+    temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
     celsiusLink.classList.remove("active");
     fahrenheitLink.classList.add("active");
   }
