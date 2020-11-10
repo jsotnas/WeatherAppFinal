@@ -1,5 +1,21 @@
 
-function formatDate(date) {
+function formatDate(timestamp) {
+  let date = new Date(timestamp);
+
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  let day = days[date.getDay()];
+  return `${day} ${formatHours(timestamp)}`;
+  }
+  function formatHours(timestamp) {
+    let date = new Date(timestamp);
     let hours = date.getHours();
     if (hours < 10) {
       hours = `0${hours}`;
@@ -9,40 +25,37 @@ function formatDate(date) {
       minutes = `0${minutes}`;
     }
   
-    let dayIndex = date.getDay();
-    let days = [
-      "Sunday",
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday"
-    ];
-    let day = days[dayIndex];
-  
-    return `${day} ${hours}:${minutes}`;
+    return `${hours}:${minutes}`;
   }
 
+function displayTemperature(response) {
+  let temperatureElement = document.querySelector("#temperature");
+  let cityElement = document.querySelector("#city");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#humidity");
+  let windElement = document.querySelector("#wind");
+  let dateElement = document.querySelector("#date");
+  let iconElement = document.querySelector("#icon");
 
-function displayWeatherCondition(response) {
-    document.querySelector("#city-name").innerHTML = response.data.name;
-    document.querySelector("#temperature").innerHTML = Math.round(
-      response.data.main.temp
-    );
-    document.querySelector("#humidity").innerHTML = Math.round(
-      response.data.main.humidity
-    );
-    document.querySelector("#wind").innerHTML = Math.round(
-      response.data.wind.speed
-    );
-    document.querySelector("#description").innerHTML = response.data.weather[0].description;
-    document.querySelector("#icon").setAttribute("src",) = `http://openweathermap.org/img/wn/10d@2x.png`;
-    
-  function searchCity(city) {
+
+celsiusTemperature = response.data.main.temp;
+
+temperatureElement.innerHTML = Math.round(celsiusTemperature);
+cityElement.innerHTML = response.data.name;
+descriptionElement.innerHTML = response.data.weather[0].description;
+humidityElement.innerHTML = response.data.main.humidity;
+windElement.innerHTML = Math.round(response.data.wind.speed);
+dateElement.innerHTML = formatDate(response.data.dt * 1000);
+iconElement.setAttribute(
+  "srs",
+  `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+iconElement.setAttribute("alt", response.data.weather[0].description);
+}
+
+    function search(city) {
     let apiKey = "cb0fb818829df1de555a746da1b22240";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(displayWeatherCondition);
+    axios.get(apiUrl).then(displayTemperature);
   }
   
   function handleSubmit(event) {
@@ -72,4 +85,4 @@ function displayWeatherCondition(response) {
   let currentLocationButton = document.querySelector("#current-location-button");
   currentLocationButton.addEventListener("click", getCurrentLocation);
   
-  searchCity("Lisbon");
+  search("New York");
