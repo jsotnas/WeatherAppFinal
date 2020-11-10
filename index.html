@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="stylesheet" href="src/style.css">
+        <link rel="stylesheet" href="style.css">
         <title>Joana Santos's Weather App</title>
     </head>
 <body>
@@ -24,8 +24,8 @@
                     </div>
                 </div>
             </form>
-        <h1>
-            <span id="city"></span>
+        <h1 >
+            <span class="currentCity" id="city-name"></span>
                 <br/>
             <span id="country"></span>
         </h1>
@@ -40,7 +40,7 @@
 <div class="col-5">
     <ul>
         <li>
-            Last updated: <span id="date"></span>
+            Date: <span id="date"></span>
         </li>
         <li id="description">
             Cloudy
