@@ -1,3 +1,4 @@
+
 function formatDate(date) {
     let hours = date.getHours();
     if (hours < 10) {
@@ -33,8 +34,7 @@ function formatDate(date) {
     document.querySelector("#wind").innerHTML = Math.round(
       response.data.wind.speed
     );
-  }
-  
+    }
   function searchCity(city) {
     let apiKey = "cb0fb818829df1de555a746da1b22240";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -68,4 +68,4 @@ function formatDate(date) {
   let currentLocationButton = document.querySelector("#current-location-button");
   currentLocationButton.addEventListener("click", getCurrentLocation);
   
-  searchCity("New York");
+  searchCity("Lisbon");
